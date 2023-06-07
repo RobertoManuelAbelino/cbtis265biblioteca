@@ -168,7 +168,6 @@ function checkPasswordStrength(password) {
         document.querySelector(`.group-material .formulario__input-error02`).classList.remove('formulario__input-error02-activo01');
         document.querySelector(`.group-material .formulario__input-error02`).classList.remove('formulario__input-error02-activo02');
         document.querySelector(`.group-material .formulario__input-error02`).classList.remove('formulario__input-error02-activo03');
-        //strengthElement.style.color = "green";
     }
 }
 
