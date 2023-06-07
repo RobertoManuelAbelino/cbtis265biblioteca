@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Prestamos y devoluciones</title>
+    <title>Registrar Libro</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
@@ -62,6 +62,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <div class="dropdown-menu-button"><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Reservaciones <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="classroom.html"><i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i>&nbsp;&nbsp; Hacer una reservación</a></li>
+                            <li>
+                                <a href="listclassroom.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i>&nbsp;&nbsp; Agenda</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -75,8 +84,8 @@
                 <figure>
                    <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
-                <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Nombre administrador</span>
+                <li style="color:#fff; cursor:default;" id="getName">
+                    <script src="js/user_data.js"></script>
                 </li>
                 
                 <li  class="tooltips-general btn-help" data-placement="bottom" title="Perfil">
@@ -93,62 +102,82 @@
         </nav>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Sistema bibliotecario <small>Devoluciones</small></h1>
+              <h1 class="all-tittles">Sistema bibliotecario <small>Añadir libro</small></h1>
             </div>
-        </div>
-        <div class="container-fluid">
-            <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
-                <li role="presentation" ><a href="loan.html">Préstamos</a></li>
-                <li role="presentation" class="active"><a href="refund.html">Devoluciones</a></li>
-            </ul>
         </div>
         <div class="container-fluid"  style="margin: 50px 0;">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-3">
-                    <img src="assets/img/checklist.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
+                    <img src="assets/img/flat-book.png" alt="pdf" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección de devoluciones. Aqui podrás ver las devoluciones hechas hasta el momento.
+                    Bienvenido a la sección para agregar nuevos libros a la biblioteca, deberas de llenar todos los campos para poder registrar el libro
                 </div>
             </div>
         </div>
-        <br>
         <div class="container-fluid">
-            <form class="pull-right" style="width: 30% !important;" autocomplete="off">
-                <div class="group-material">
-                    <input type="search" style="display: inline-block !important; width: 70%;" class="material-control tooltips-general" placeholder="Buscar devoluciones" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe alguna característica de la devolución">
-                    <button class="btn" style="margin: 0; height: 43px; background-color: transparent !important;">
-                        <i class="zmdi zmdi-search" style="font-size: 25px;"></i>
-                    </button>
+            
+                <div class="container-flat-form">
+                    <div class="title-flat-form title-flat-blue">Nuevo libro</div>
+                    <div class="row">
+                       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <legend><strong>Información básica</strong></legend><br>
+                            <div class="group-material">
+                                <input id="isbn-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el ISBN del libro" pattern="[0-9 -]{1,20}" required="" maxlength="20" data-toggle="tooltip" data-placement="top" title="Escribe el ISBN del libro, solamente números y '-'">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>ISBN</label>
+                            </div>
+                            <div class="group-material">
+                                <input id="titulo-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el título o nombre del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el título o nombre del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Título</label>
+                            </div>
+                            <div class="group-material">
+                                <input id="autor-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el autor del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del autor del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Autor</label>
+                            </div>
+                            <div class="group-material">
+                                <input id="editorial-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí la editorial del libro" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe la editorial del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Editorial</label>
+                            </div>
+                            <div class="group-material">
+                                <input id="edicion-input" type="text" class="material-control tooltips-general" placeholder="Escribe aquí la edición del libro" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Edición del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Edición</label>
+                            </div>
+                            <div class="group-material">
+                               <input id="anioP-input" type="number" class="material-control tooltips-general" placeholder="Escribe aquí el año de publicación del libro" required="" pattern="[0-9]{1,4}" maxlength="4" data-toggle="tooltip" data-placement="top" title="Solamente números, sin espacios">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Año de publicación</label>
+                           </div>
+                            <div class="group-material">
+                                <input id="descripcion-input" type="text" class="tooltips-general material-control" placeholder="Escribe una breve descripción del libro" required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Escribe una breve descripcion del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Descripción</label>
+                            </div>
+                            <div class="group-material">
+                                <input id="cantidad-input" type="number" class="material-control tooltips-general"  placeholder="Escribe aquí la cantidad de libros que registraras" required=" "pattern="[0-9]{1,7}" maxlength="7" data-toggle="tooltip" data-placement="top" title="¿Cuántos libros registraras?">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Cantidad</label>
+                            </div>
+                            <p class="text-center">
+                                <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
+                                <button type="submit" class="btn btn-primary" id="buton-save-book"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
+                            </p>
+                       </div>
+                   </div>
                 </div>
-            </form>
-            <h2 class="text-center all-tittles" style="clear: both; margin: 25px 0;">Listado de devoluciones</h2>
-            <div class="table-responsive">
-                <div class="div-table" style="margin:0 !important;">
-                    <div class="div-table-row div-table-row-list" style="background-color:#aa5e5e; font-weight:bold;color: white;">
-                        <div class="div-table-cell" style="width: 5%;">Id Prestamo</div>
-                        <div class="div-table-cell" style="width: 15%;">Libro Prestado</div>
-                        <div class="div-table-cell" style="width: 10%;">#C. Estudiante</div>
-                        <div class="div-table-cell" style="width: 15%;">Nombre Estud.</div>
-                        <div class="div-table-cell" style="width: 10%;">F. Prestamo</div>
-                        <div class="div-table-cell" style="width: 10%;">F. E. Devolucion</div>
-                        <div class="div-table-cell" style="width: 10%;">F. Devuelta</div>
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <div class="div-table" style="margin:0 !important;">
-                        <div class="div-table-row div-table-row-list">
-                            <div class="div-table-cell" style="width: 5%;">1</div>
-                        <div class="div-table-cell" style="width: 15%;">Romeo y Julieta</div>
-                        <div class="div-table-cell" style="width: 10%;">18161174</div>
-                        <div class="div-table-cell" style="width: 15%;">Roberto Manuel Abelino</div>
-                        <div class="div-table-cell" style="width: 10%;">24/09/2022</div>
-                        <div class="div-table-cell" style="width: 10%;">27/09/2022</div>
-                        <div class="div-table-cell" style="width: 10%;">30/09/2022</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <footer class="footer full-reset">
             <div class="container-fluid">
@@ -167,5 +196,6 @@
             <div class="footer-copyright full-reset all-tittles">© DGETI 2023</div>
         </footer>
     </div>
+    <script src="../BibliotecaCBTIS265/js/post_book.js" type="module"></script>
 </body>
 </html>

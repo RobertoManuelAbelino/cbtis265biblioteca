@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Administradores</title>
+    <title>Prestamos</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
@@ -31,7 +31,7 @@
                 <figure>
                     <img src="assets/img/logo_DGETI.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
-                <p class="text-center" style="padding-top: 15px;">Biblioteca CBTIS 263</p>
+                <p class="text-center" style="padding-top: 15px;">Biblioteca CBTIS 265</p>
             </div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
@@ -62,6 +62,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <div class="dropdown-menu-button"><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Reservaciones <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="classroom.html"><i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i>&nbsp;&nbsp; Hacer una reservación</a></li>
+                            <li>
+                                <a href="listclassroom.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i>&nbsp;&nbsp; Agenda</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -75,8 +84,8 @@
                 <figure>
                    <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
-                <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Admin Name</span>
+                <li style="color:#fff; cursor:default;" id="getName">
+                    <script src="js/user_data.js"></script>
                 </li>
                 
                 <li  class="tooltips-general btn-help" data-placement="bottom" title="Perfil">
@@ -93,53 +102,60 @@
         </nav>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Sistema bibliotecario <small>Administración Usuarios</small></h1>
+              <h1 class="all-tittles">Sistema bibliotecario <small>préstamos y reservaciones</small></h1>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="conteiner-fluid">
             <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
-              <li role="presentation"  class="active"><a href="admin.html">Administradores</a></li>
-                <li role="presentation"><a href="personal.html">Encargado de biblioteca</a></li>
+                <li class="active"><a href="loan.html">Todos los préstamos</a></li>
+                <li><a href="loanpending.html">Devoluciones pendientes</a></li>
+                <li><a href="loanreservation.html">Reservaciones</a></li>
             </ul>
         </div>
         <div class="container-fluid"  style="margin: 50px 0;">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-3">
-                    <img src="assets/img/user01.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
+                    <img src="assets/img/calendar_book.png" alt="calendar" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección donde se encuentra el listado de los administradores.
+                    Bienvenido a esta sección, aquí se muestran todos los préstamos de libros realizados hasta la fecha y que ya se entregaron satisfactoriamente
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 lead">
-                    <ol class="breadcrumb">
-                        <li><a href="admin.html">Nuevo administrador</a></li>
-                        <li class="active">listado de administradores</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <h2 class="text-center all-tittles">Lista de administradores</h2>
-            <div class="div-table">
-                <div class="div-table-row div-table-head">
-                    <div class="div-table-cell">#</div>
-                    <div class="div-table-cell">Nombre</div>
-                    <div class="div-table-cell">Apellidos</div>
-                    <div class="div-table-cell">Nombre de usuario</div>
-                    <div class="div-table-cell">Telefono</div>                    
-                </div>  
-                <div class="div-table-row">
-                    <div class="div-table-cell">1</div>
-                    <div class="div-table-cell">Roberto</div>
-                    <div class="div-table-cell">Manuel Abelino</div>
-                    <div class="div-table-cell">Admin1</div>
-                    <div class="div-table-cell">9515085468</div>
+            <h2 class="text-center all-tittles">Listado de préstamos</h2>
+            <div class="table-responsive">
+                <div class="div-table" style="margin:0 !important;">
+                    <div class="div-table-row div-table-row-list" style="background-color:#DFF0D8; font-weight:bold;">
+                        <div class="div-table-cell" style="width: 4%;">#</div>
+                        <div class="div-table-cell" style="width: 22%;">Libro Prestado</div>
+                        <div class="div-table-cell" style="width: 22%;">Nombre de usuario</div>
+                        <div class="div-table-cell" style="width: 10%;">Tipo</div>
+                        <div class="div-table-cell" style="width: 10%;">F. Solicitud</div>
+                        <div class="div-table-cell" style="width: 10%;">F. Entrega</div>
+                        <div class="div-table-cell" style="width: 8%;">Eliminar</div>
+                        <div class="div-table-cell" style="width: 8%;">Ver Ficha</div>
                     </div>
-            </div>                  
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div class="div-table" style="margin:0 !important;">
+                    <div class="div-table-row div-table-row-list">
+                        <div class="div-table-cell" style="width: 4%;">#</div>
+                        <div class="div-table-cell" style="width: 22%;">Nombre de Libro</div>
+                        <div class="div-table-cell" style="width: 22%;">Nombre de Usuario</div>
+                        <div class="div-table-cell" style="width: 10%;">Tipo</div>
+                        <div class="div-table-cell" style="width: 10%;">F. Solicitud</div>
+                        <div class="div-table-cell" style="width: 10%;">F. Entrega</div>
+                        <div class="div-table-cell" style="width: 8%;">
+                            <button class="btn btn-danger"><i class="zmdi zmdi-delete"></i></button>
+                        </div>
+                        <div class="div-table-cell" style="width: 8%;">
+                            <button class="btn btn-info"><i class="zmdi zmdi-file-text"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="footer full-reset">
             <div class="container-fluid">
@@ -156,7 +172,7 @@
                 </div>
             </div>
             <div class="footer-copyright full-reset all-tittles">© DGETI 2023</div>
-        </footer>
+        </footer>   
     </div>
 </body>
 </html>

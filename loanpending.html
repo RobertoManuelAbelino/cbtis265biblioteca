@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/modernizr.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <div class="navbar-lateral full-reset">
@@ -62,6 +64,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <div class="dropdown-menu-button"><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Reservaciones <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="classroom.html"><i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i>&nbsp;&nbsp; Hacer una reservación</a></li>
+                            <li>
+                                <a href="listclassroom.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i>&nbsp;&nbsp; Agenda</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -72,8 +83,8 @@
                 <figure>
                    <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
-                <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Admin Name</span>
+                <li style="color:#fff; cursor:default;" id="getName">
+                    <script src="js/user_data.js"></script>
                 </li>
                 <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                     <i class="zmdi zmdi-power"></i>
@@ -121,6 +132,25 @@
             </div>
         </div>
         <div class="container-fluid">
+            <h2 class="text-center all-tittles" style="clear: both; margin: 25px 0;">listado de prestamos pendientes</h2>
+            <div class="tabla-paginada" id="tabla-libros">
+                <table  id="tabla">
+                    <thead>
+                        <th>ISBN</th>
+                        <th>Titulo</th>
+                        <th># Control</th>
+                        <th>Nombre estudiante</th>
+                        <th>Fecha Prestamo</th>
+                        <th>Fecha Entrega</th>
+                        <th>Devolver</th>
+                    </thead>
+                    <tbody id="body-tabla">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--div class="container-fluid">
             <form class="pull-right" style="width: 30% !important;" autocomplete="off">
                 <div class="group-material">
                     <input type="search" style="display: inline-block !important; width: 70%;" class="material-control tooltips-general" placeholder="Buscar préstamo" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]{1,50}" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe alguna característica del préstamo">
@@ -130,7 +160,7 @@
                 </div>
             </form>
             <h2 class="text-center all-tittles" style="clear: both; margin: 25px 0;">listado de Prestamos</h2>
-            <div class="table-responsive">
+            <div id="table-loans" class="table-responsive">
                 <div class="div-table" style="margin:0 !important;">
                     <div class="div-table-row div-table-row-list" style="background-color:#DFF0D8; font-weight:bold;">
                         <div class="div-table-cell" style="width: 10%;">ISBN</div>
@@ -143,23 +173,8 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
-                <div class="div-table" style="margin:0 !important;">
-                    <div class="div-table-row div-table-row-list">
-                        <div class="div-table-cell" style="width: 10%;">1234567812345678</div>
-                        <div class="div-table-cell" style="width: 22%;">El quijote</div>
-                        <div class="div-table-cell" style="width: 10%;">18161174</div>
-                        <div class="div-table-cell" style="width: 22%;">Roberto Manuel Abelino</div>
-                        <div class="div-table-cell" style="width: 10%;">24/09/2022</div>
-                        <div class="div-table-cell" style="width: 10%;">27/09/2022</div>
-                        <div class="div-table-cell" style="width: 8%;">
-                            <button class="btn btn-success"><i class="zmdi zmdi-time-restore"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
-        </div>
+        </div-->
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -193,5 +208,6 @@
             <div class="footer-copyright full-reset all-tittles">© DGETI 2023</div>
         </footer>
     </div>
+    <script src="/cbtis265biblioteca/BibliotecaCBTIS265/js/loanpending_mod.js" defer></script>
 </body>
 </html>

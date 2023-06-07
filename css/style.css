@@ -47,6 +47,17 @@ span.label-mhover{
     padding: 0;
     width: 100%;
 }
+
+/*Tablas paginadas*/
+.tabla-paginada{
+    font-size:large;
+    text-align: center;
+}
+#tabla thead{
+    background-color: #941c1c;
+    color: white;
+    
+}
 /*********==========Tablas con divs*/
 .div-table{
     display: table !important;
@@ -333,7 +344,8 @@ input.material-control:valid ~ label{
   font-weight: normal;
 }
 input.material-control:valid ~ label:before{
-    content: "✓   "
+    content: "✓   ";
+    color: #24e327;
 }
 input.material-control:focus:invalid ~ label,
 input.material-control:invalid ~ label{
@@ -356,6 +368,16 @@ input.material-control:focus:invalid:required,
 input.material-control:invalid:required{
   outline: none;
   box-shadow: none;
+}
+/*Formato de los selects*/
+.titulos-selects{
+    color: #E34724;
+}
+.selects-tiempo{
+    width: 100%;
+    border-color: white;
+    border-bottom: #303F9F;
+    font-size:smaller;
 }
 /*Barra de formularios material desing ================*/
 .bar{ position:relative; display:block; width:100%; }
@@ -558,4 +580,16 @@ input.material-control:focus ~ .highlight {
 @media (min-width: 1200px) {
     .form-container{ width: 370px; }
     .navbar-lateral{ display: inherit !important; }
+}
+
+/* Parrafo de error en la validación de la contraseña */
+.formulario__input-error {
+	font-size: 13px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+    color:#f92e2e;
+	display: block;
 }

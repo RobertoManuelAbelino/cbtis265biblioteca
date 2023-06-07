@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Prestamos y Devoluciones</title>
+    <title>Aula</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
@@ -62,6 +62,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <div class="dropdown-menu-button"><i class="zmdi zmdi-calendar zmdi-hc-fw"></i>&nbsp;&nbsp; Reservaciones <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="classroom.html"><i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i>&nbsp;&nbsp; Hacer una reservación</a></li>
+                            <li>
+                                <a href="listclassroom.html"><i class="zmdi zmdi-bookmark zmdi-hc-fw"></i>&nbsp;&nbsp; Agenda</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -75,10 +84,9 @@
                 <figure>
                    <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
-                <li style="color:#fff; cursor:default;">
-                    <span class="all-tittles">Nombre de administrador</span>
+                <li style="color:#fff; cursor:default;" id="getName">
+                    <script src="js/user_data.js"></script>
                 </li>
-                
                 <li  class="tooltips-general btn-help" data-placement="bottom" title="Perfil">
                     <i class="zmdi zmdi-account"></i>
                 </li>
@@ -93,86 +101,95 @@
         </nav>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Sistema bibliotecario <small>Administración de préstamos</small></h1>
+              <h1 class="all-tittles">Sistema bibliotecario <small>Reservación del aula</small></h1>
             </div>
         </div>
         <div class="container-fluid">
             <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
-                <li role="presentation"  class="active"><a href="loan.html">Préstamos</a></li>
-                <li role="presentation"><a href="refund.html">Devoluciones</a></li>
+                <li role="presentation"><a href="listclassroom.html">Agenda</a></li>
+                <li role="presentation" class="active"><a href="classroom.html">Asignar reservación</a></li>
             </ul>
         </div>
         <div class="container-fluid"  style="margin: 50px 0;">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-3">
-                    <img src="assets/img/clock.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
+                    <img src="assets/img/flat-book.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección para registrar prestamos en el sistema, debes de llenar todos los campos del siguiente formulario para registrar un prestamo.
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 lead">
-                    <ol class="breadcrumb">
-                      <li class="active">Registrar prestamo</li>
-                      <li><a href="loanpending.html">Prestamos realizados</a></li>
-                    </ol>
+                    Bienvenido a la sección para reservar el aula para actividades, debes de llenar todos los campos del siguiente formulario para agendar una fecha y hora
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="container-flat-form">
-                <div class="title-flat-form title-flat-blue">Registrar un nuevo prestamo</div>
+                <div class="title-flat-form title-flat-blue">Agendar reservación</div>
                 <form autocomplete="off">
                     <div class="row">
                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="ISBN" required="" maxlength="70" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,70}" data-toggle="tooltip" data-placement="top" title="Escribe el ISBN del libro que se prestará">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>ISBN del libro a prestar</label>
+                                <h4 class="titulos-selects">Profesor</h4>
+                                <select class="selects-tiempo" id="select-profesor">
+                                    <option >Fermin Antonio</option>
+                                    <option >Maria Hernandez</option>
+                                    <option >Julian Gutierrez</option>
+                                    <option >Fepsalí Pérez</option>
+                                    <option >Willebaldo Ugarte</option>
+                                    <option >Monica Velasco</option>
+                                    <option >Josefa Chavez</option>
+                                    <option >Karolina Ferrera</option>
+                                </select>
                             </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="No Control" required="" maxlength="70" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,70}" data-toggle="tooltip" data-placement="top" title="Escribe el número de control del estudiante">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Número de control del estudiante</label>
+                                <h4 class="titulos-selects">Fecha de reservación</h4>
+                                <select class="selects-tiempo" id="select-materia">
+                                    <option >Inglés</option>
+                                    <option >Matematicas</option>
+                                    <option >Lenguaje expresión oral y escrita</option>
+                                    <option >Calculo Diferencial</option>
+                                    <option >Calculo Integral</option>
+                                    <option >Geometria analítica</option>
+                                    <option >Lógica</option>
+                                    <option >Tutorias</option>
+                                    <option >Quimica</option>
+                                </select>
                             </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Nombre completo" required="" maxlength="100" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,70}" data-toggle="tooltip" data-placement="top" title="Escribe el nombre completo del estudiante">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Nombre del estudiante</label>
+                                <h4 class="titulos-selects">Grado</h4>
+                                <select class="selects-tiempo" id="select-grado">
+                                    <option >1</option>
+                                    <option >2</option>
+                                    <option >3</option>
+                                    <option >4</option>
+                                    <option >5</option>
+                                    <option >6</option>
+                                </select>
                             </div>
-                           <div class="group-material">
-                                <input type="text" class="material-control tooltips-general input-check-user" placeholder="Grado" required="" maxlength="20" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]{1,20}" data-toggle="tooltip" data-placement="top" title="Escribe el grado del estudiante">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Grado del estudiante</label>
-                           </div>
                             <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Grupo" required="" maxlength="3" data-toggle="tooltip" data-placement="top" title="Escribe el grupo al que pertenece el estudiante">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Grupo del estudiante</label>
+                                <h4 class="titulos-selects">Grupo</h4>
+                                <select class="selects-tiempo" id="select-grupo">
+                                    <option >A</option>
+                                    <option >B</option>
+                                    <option >C</option>
+                                    <option >D</option>
+                                    <option >E</option>
+                                    <option >F</option>
+                                </select>
                             </div>
-                           <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Contacto" required="" maxlength="100" data-toggle="tooltip" data-placement="top" title="Escribe algún dato de contacto del estudiante(numero telefonico, correo, etc.)">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Ingrese un dato de contacto del estudiante</label>
-                           </div>
-                           <div class="group-material">
-                            <input type="date" class="material-control tooltips-general" placeholder="Fecha estimada" required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Escribe algún dato de contacto del estudiante(numero telefonico, correo, etc.)">
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Ingrese la fecha estimada de entrega</label>
-                       </div>
+                            <div class="group-material">
+                                <h4 class="titulos-selects">Fecha de reservación</h4>
+                                <select class="selects-tiempo" id="select-fecha">
+
+                                </select>
+                            </div>
+                            <div class="group-material">
+                                <h4 class="titulos-selects">Seleciona la hora a apartar</h4>
+                                <select class="selects-tiempo" id="select-hora">
+
+                                </select>
+                            </div>
                             <p class="text-center">
                                 <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
-                                <button type="submit" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
+                                <button id="buton-save-register" type="button" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
                             </p> 
                        </div>
                    </div>
@@ -196,5 +213,6 @@
             <div class="footer-copyright full-reset all-tittles">© DGETI 2023</div>
         </footer>
     </div>
+    <script src="/cbtis265biblioteca/BibliotecaCBTIS265/js/classroom_mod.js"></script>
 </body>
 </html>
