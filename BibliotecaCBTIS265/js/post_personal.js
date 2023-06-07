@@ -84,6 +84,17 @@ const validarRegex = () => {
     }
 }
 
+$("#password-input").bind("keydown",function(e){
+    if(e.keyCode==32){
+        e.preventDefault()
+    console.log(e.keyCode)}
+})
+
+$("#password2-input").bind("keydown",function(e){
+    if(e.keyCode==32){
+        e.preventDefault()
+    console.log(e.keyCode)}
+})
 
 function checkPasswordStrength(password) {
     // Inicializar variables
@@ -92,7 +103,7 @@ function checkPasswordStrength(password) {
 
     // Validar longitud de la contraseña
     if (password.length < 8) {
-        tips += "La contraseña debe ser minimo de 8 caracteres. ";
+        tips += "\nLa contraseña debe ser minimo de 8 caracteres. ";
     } else {
         strength += 1;
         validaciones.longitud = true
@@ -103,7 +114,7 @@ function checkPasswordStrength(password) {
         strength += 1;
         validaciones.mayusculas = true
     } else {
-        tips += "Incluye al menos 1 letra mayúscula. ";
+        tips += "\nIncluye al menos 1 letra mayúscula. ";
     }
 
     // Validar para letras minusculas
@@ -111,7 +122,7 @@ function checkPasswordStrength(password) {
         strength += 1;
         validaciones.minusculas = true
     } else {
-        tips += "Incluye al menos 1 letra minúscula.";
+        tips += "\nIncluye al menos 1 letra minúscula.";
     }
 
     // Validar para numeros
@@ -119,7 +130,7 @@ function checkPasswordStrength(password) {
         strength += 1;
         validaciones.numero = true
     } else {
-        tips += "Incluye al menos 1 número.";
+        tips += "\nIncluye al menos 1 número.";
     }
 
     // Validar para caracteres especiales
@@ -127,7 +138,7 @@ function checkPasswordStrength(password) {
         strength += 1;
         validaciones.caracteres = true
     } else {
-        tips += "Incluya al menos 1 carácter especial.";
+        tips += "\nIncluya al menos 1 carácter especial.";
     }
 
     // Obtener el elemento de párrafo
