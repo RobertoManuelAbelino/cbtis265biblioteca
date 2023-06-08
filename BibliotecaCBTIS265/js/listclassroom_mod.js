@@ -165,7 +165,7 @@ fetch(url)
       let icono_boton = document.createElement("i")
       icono_boton.className = "zmdi zmdi-delete"
       boton.appendChild(icono_boton)
-      boton.title = "Eliminar"
+      boton.title = "Borrar"
       div_boton.appendChild(botonActualizar)
       div_boton.appendChild(boton)
       cuerpoTabla.appendChild(fila)

@@ -151,7 +151,7 @@ fetch(url)
       //let libro_botonEliminar = fila.appendChild(document.createElement("td"))
       let botonE = document.createElement("button");
       botonE.className = "btn btn-danger";
-      botonE.title = "Eliminar"
+      botonE.title = "Borrar"
       let logoE = document.createElement("i")
       logoE.className = "zmdi zmdi-delete"
       botonE.appendChild(logoE);
@@ -166,8 +166,10 @@ fetch(url)
           .then(response => {
             if (response.ok) {
               console.log('Libro eliminado correctamente');
-              window.alert("El libro ha sido eliminado correctamente")
-              window.location.reload()
+              swal("Eliminado","El libro ha sido sacado del inventario","warning")
+              setTimeout(() => {
+                window.location.reload()
+              }, "3000");
             } else {
               console.error('Error al eliminar el libro:', response.status);
             }

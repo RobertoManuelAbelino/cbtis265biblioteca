@@ -593,3 +593,26 @@ input.material-control:focus ~ .highlight {
     color:#f92e2e;
 	display: block;
 }
+
+.formulario__input-error02 {
+	font-size: 13px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error02-activo01 {
+    color: #f92e2e;
+	display: block;
+}
+.formulario__input-error02-activo02 {
+    color: #F57C00;
+	display: block;
+}
+.formulario__input-error02-activo03 {
+    color: #000000;
+	display: block;
+}
+.formulario__input-error02-activo04 {
+    color: #24e327;
+	display: block;
+}

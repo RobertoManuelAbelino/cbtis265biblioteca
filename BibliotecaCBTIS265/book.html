@@ -123,49 +123,71 @@
                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                             <legend><strong>Información básica</strong></legend><br>
                             <div class="group-material">
-                                <input id="isbn-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el ISBN del libro" pattern="[0-9 -]{1,20}" required="" maxlength="20" data-toggle="tooltip" data-placement="top" title="Escribe el ISBN del libro, solamente números y '-'">
+                                <input id="isbn-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el ISBN del libro, ejemplo: 123-0123456789" maxlength="14" minlength="13" required="" pattern="^[0-9-][0-9-][0-9-][-][0-9-][0-9-][0-9-][0-9-][0-9-][0-9-][0-9-][0-9-][0-9-][0-9-]" data-toggle="tooltip" data-placement="top" title="Escribe el ISBN del libro, solamente números y '-'">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>ISBN</label>
                             </div>
                             <div class="group-material">
-                                <input id="titulo-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el título o nombre del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el título o nombre del libro">
+                                <input id="titulo-input" type="text" class="otro tooltips-general material-control" placeholder="Escribe aquí el título o nombre del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el título o nombre del libro">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Título</label>
                             </div>
                             <div class="group-material">
-                                <input id="autor-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí el autor del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del autor del libro">
+                                <input id="autor-input" type="text" class="otro tooltips-general material-control" placeholder="Escribe aquí el autor del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del autor del libro">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Autor</label>
                             </div>
                             <div class="group-material">
+                                <h4 class="titulos-selects">Editorial</h4>
+                                <select class="selects-tiempo" id="select-editorial">
+                                    <option >Trillas</option>
+                                    <option >McGrawHill</option>
+                                    <option >Pearson</option>
+                                    <option >Sandy</option>
+                                    <option >Reina Valera</option>
+                                    <option >Hamilton</option>
+                                </select>
+                            </div>
+                            <!--div class="group-material">
                                 <input id="editorial-input" type="text" class="tooltips-general material-control" placeholder="Escribe aquí la editorial del libro" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe la editorial del libro">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Editorial</label>
-                            </div>
+                            </div-->
                             <div class="group-material">
+                                <h4 class="titulos-selects">Edicion</h4>
+                                <select class="selects-tiempo" id="select-edicion">
+                                    <option >1a</option>
+                                    <option >2a</option>
+                                    <option >3a</option>
+                                    <option >4a</option>
+                                    <option >5a</option>
+                                    <option >6a</option>
+                                </select>
+                            </div>
+                            <!--div class="group-material">
                                 <input id="edicion-input" type="text" class="material-control tooltips-general" placeholder="Escribe aquí la edición del libro" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Edición del libro">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Edición</label>
-                            </div>
+                            </div-->
                             <div class="group-material">
-                               <input id="anioP-input" type="number" class="material-control tooltips-general" placeholder="Escribe aquí el año de publicación del libro" required="" pattern="[0-9]{1,4}" maxlength="4" data-toggle="tooltip" data-placement="top" title="Solamente números, sin espacios">
+                               <input id="anioP-input" type="number" class="otro material-control tooltips-general" placeholder="Escribe aquí el año de publicación del libro" required="" pattern="[0-9]{1,4}" maxlength="4" data-toggle="tooltip" data-placement="top" title="Solamente números, sin espacios">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Año de publicación</label>
                            </div>
                             <div class="group-material">
-                                <input id="descripcion-input" type="text" class="tooltips-general material-control" placeholder="Escribe una breve descripción del libro" required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Escribe una breve descripcion del libro">
+                                <input id="descripcion-input" type="text" class="otro tooltips-general material-control" placeholder="Escribe una breve descripción del libro" required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Escribe una breve descripcion del libro">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Descripción</label>
                             </div>
                             <div class="group-material">
-                                <input id="cantidad-input" type="number" class="material-control tooltips-general"  placeholder="Escribe aquí la cantidad de libros que registraras" required=" "pattern="[0-9]{1,7}" maxlength="7" data-toggle="tooltip" data-placement="top" title="¿Cuántos libros registraras?">
+                                <input id="cantidad-input" type="number" class="otro material-control tooltips-general"  placeholder="Escribe aquí la cantidad de libros que registraras" required=" "pattern="[0-9]{1,7}" maxlength="7" data-toggle="tooltip" data-placement="top" title="¿Cuántos libros registraras?">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Cantidad</label>
@@ -198,4 +220,11 @@
     </div>
     <script src="../BibliotecaCBTIS265/js/post_book.js" type="module"></script>
 </body>
+
+<style>
+    .deshabilitado{
+        background-color: #878484;
+        cursor:not-allowed;
+    }
+</style>
 </html>

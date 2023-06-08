@@ -134,7 +134,7 @@
         <div class="container-fluid">
             <div class="container-flat-form">
                 <div class="title-flat-form title-flat-blue">Registrar nuevo encargado de biblioteca</div>
-                <!--<form autocomplete="off" id="librarian-form">-->
+                <form autocomplete="off">
                     <div class="row" id="librarian-form">
                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                         <div class="group-material">
@@ -156,13 +156,14 @@
                             <label>Nombre de usuario</label>
                        </div>
                         <div class="group-material">
-                            <input id="password-input" name="password-input" type="password" class="material-control tooltips-general" placeholder="Contraseña" required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Escribe una contraseña">
+                            <input id="password-input" name="password-input" type="password" class="material-control tooltips-general" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,15}$" required="" maxlength="15" data-toggle="tooltip" data-placement="top" title="Escribe una contraseña" >
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Contraseña</label>
+                            <p class="formulario__input-error02" id="checking"></p>
                         </div>
                        <div class="group-material">
-                            <input id="password2-input" name="password2-input" type="password" class="material-control tooltips-general" placeholder="Repite la contraseña" required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Repite la contraseña">
+                            <input id="password2-input" name="password2-input" type="password" class="material-control tooltips-general" placeholder="Repite la contraseña" required="" maxlength="15" data-toggle="tooltip" data-placement="top" title="Repite la contraseña">
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Repetir contraseña</label>
@@ -170,7 +171,7 @@
                        </div>
                         <p class="text-center">
                             <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
-                            <button id="boton-save-personal" type="submit" class="btn btn-primary" name="boton-save-personal"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
+                            <button id="boton-save-personal" type="button" class="btn btn-primary" name="boton-save-personal"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
                         </p>  
                         </div>
                     </div>

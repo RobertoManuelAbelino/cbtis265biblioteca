@@ -69,8 +69,10 @@ boton_registrar.addEventListener('click', ()=>{
             if (response.ok) {
               console.log('La petición se realizó correctamente.');
               // Puedes realizar las acciones necesarias cuando la petición se realiza correctamente
-                window.alert("Se ha agendado la clase");
-                window.location.reload()
+              swal("Reservación realizada","Se ha reservado la clase exitosamente","success")
+              setTimeout(() => {
+                  window.location.reload();
+                }, "4000");
             } else {
               console.log('Ocurrió un error durante la petición.');
               // Puedes manejar el error cuando la petición no se realiza correctamente
